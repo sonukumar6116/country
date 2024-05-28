@@ -23,8 +23,8 @@ This project is a React application bootstrapped with Vite. It fetches country d
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/vite-react-country-data.git
-   cd vite-react-country-data
+   git clone https://github.com/sonukumar6116/country
+   cd country
    ```
 
 2. Install dependencies:
