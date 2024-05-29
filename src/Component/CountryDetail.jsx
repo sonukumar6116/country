@@ -106,7 +106,8 @@ const CountryDetail = ({ dark }) => {
                                           </div>
                                           <div className='feild Capital flex gap-4 justify-start mb-1'>
                                                 <p className='text-xl font-bold text-nowrap font-comforta'>Independent :</p>
-                                                <p style={(data?.independent ? { color: "green" } : { color: "rebeccapurple" })} className='text-xl font-bold'>{data?.independent ? "true" : "false"}</p>
+                                                <p style={(data?.independent ? { color: "green" ,borderStyle:"solid", borderWidth:"2px", borderColor:"green" } : { color: "rebeccapurple" })} 
+                                                className='px-2 rounded-md text-xl font-bold bg-[rgba(0,0,0,.2)]  '>{data?.independent ? "true" : "false"}</p>
                                           </div>
                                     </div>
                                     <div className='middle-div-right md:w-[50%] px-4 py-4'>
