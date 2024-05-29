@@ -1,6 +1,6 @@
 # Vite React Country Data Project
 
-This project is a React application bootstrapped with Vite. It fetches country data from the REST Countries API and includes several features such as a shimmer effect for loading states, searching by country name, filtering by region, and dark/light mode. The application is also responsive.
+This project is a React application bootstrapped with Vite. It fetches country data from the REST Countries API and includes several features such as a shimmer effect for loading states, searching by country name, filtering by region , Pagination, and dark/light mode. The application is also responsive.
 
 ## Features
 
@@ -9,8 +9,8 @@ This project is a React application bootstrapped with Vite. It fetches country d
 3. **Search by Name**: Allows users to search for countries by their name.
 4. **Filter by Region**: Enables filtering of countries based on regions (e.g., Africa, Americas, Asia, Europe, Oceania).
 5. **Dark/Light Mode**: Users can toggle between dark and light themes.
-6. **Responsive Design**: The application is fully responsive and works on various screen sizes.
-
+6. **Responsive Design**: The application is responsive and works on various screen sizes.
+7. **Pagination**: The Application have a pagination 
 ## Getting Started
 
 ### Prerequisites
@@ -92,6 +92,10 @@ The `ThemeToggle` component allows users to switch between dark and light modes.
 ### Responsive Design
 
 The application is designed to be fully responsive, ensuring it works well on various screen sizes, from mobile devices to desktops.
+
+### Pagination
+
+The application is have pagination for changing a page 
 
 ## Contributing
 
