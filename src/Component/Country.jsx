@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react'
 import CountryCard from './CountryCard'
 import CountryShimmer from './Shimmer/Country.shimmer';
 import SearchPanel from './SearchPanel';
+import Pagination from './Pagination';
 
 
 const Country = ({ dark }) => {
 
       const [countriesData, setCountriesData] = useState([]);
       const [query, setQuery] = useState("")
+      const [page, setPage] = useState(1)
+      const [limit, setLimit] = useState(null)
       const [selectRegion, setSelectRegion] = useState("")
 
       const DarkTheme = {
@@ -23,28 +26,21 @@ const Country = ({ dark }) => {
             let localQuery = localStorage.getItem("query");
             if (localQuery) {
                   setQuery(localQuery);
-            } 
+            }
             let localRegion = localStorage.getItem("region");
             if (localRegion) {
                   setSelectRegion(localRegion);
-            } 
-      }, [setQuery,setSelectRegion])
+            }
+      }, [setQuery, setSelectRegion])
 
 
       useEffect(() => {
-            // const url = 'https://restfulcountries.com/api/v1/countries';
-            // const options = {
-            //       method: 'GET',
-            //       headers: {
-            //             "Authorization": 'Bearer 838|qdxyi8mhiTy5Vt96Nu9mRgmgsNHpOgoSJEUxYDAY',
-            //             'Accept': 'application/json'
-            //       }
-            // };
             fetch('https://restcountries.com/v3.1/all')
                   .then((res) => res.json())
                   .then((data) => {
                         setCountriesData(data)
-                        console.log(typeof countriesData)
+                        setLimit(data.length / 10)
+                        // console.log(typeof countriesData)
                   })
       }, [])
 
@@ -65,6 +61,8 @@ const Country = ({ dark }) => {
                                           country?.name.common.toLowerCase().includes(query))
                                     .filter(country =>
                                           country?.region.toLowerCase().includes(selectRegion))
+                                    .slice((query.length === 0 && selectRegion.length === 0) ? (page - 1) * 10 : 0,
+                                          (query.length === 0 && selectRegion.length === 0) ? page * 10 : undefined)
                                     .map(country => (
                                           <CountryCard
                                                 key={country?.name.common}
@@ -74,6 +72,13 @@ const Country = ({ dark }) => {
                                     ))
                         }
                   </div >
+                  {
+                        query.length == 0 && selectRegion == 0 && <Pagination
+                              page={page}
+                              setPage={setPage}
+                              limit={limit}
+                              setLimit={setLimit} />
+                  }
             </div> :
             <CountryShimmer />
       )
