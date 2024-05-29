@@ -125,7 +125,7 @@ const CountryDetail = ({ dark }) => {
                                           </div>
                                           <div className='feild Capital flex gap-4 justify-start mb-1'>
                                                 <p className='text-xl font-bold text-nowrap font-comforta'>Postal Code :</p>
-                                                <p className='text-xl font-light text-wrap'>{data?.postalCode?.regex}</p>
+                                                <p className='text-xl font-light text-wrap overflow-hidden'>{data?.postalCode?.regex}</p>
                                           </div>
                                     </div>
                               </div>
