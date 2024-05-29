@@ -86,7 +86,7 @@ const CountryDetail = ({ dark }) => {
                                     </div>
 
                                     <div className='Right_Upper_Div flex justify-center items-center md:w-[50%] p-2'>
-                                          <img className='w-[90%]' src={data?.flags?.svg} alt={data?.name?.common} />
+                                          <img className=' w-[90%] max-h-[200px] overflow-hidden' src={data?.flags?.svg} alt={data?.name?.common} />
                                     </div>
                               </div>
 
